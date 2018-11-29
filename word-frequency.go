@@ -4,9 +4,13 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"time"
 )
 
 func main() {
+	now := time.Now()
+	defer printTimeTaken(now)
+
 	file, err := os.Open("big.txt")
 	check(err)
 
@@ -26,6 +30,11 @@ func main() {
 	}
 
 	printMap(wordCountMap, maxWordLength)
+}
+
+func printTimeTaken(now time.Time) {
+	fmt.Println()
+	fmt.Printf("Time taken: %v\n", time.Since(now))
 }
 
 func check(e error) {
