@@ -15,14 +15,17 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanWords)
 
+	maxWordLength := 0
 	wordCountMap := make(map[string]int)
 
 	for scanner.Scan(){
 		word := scanner.Text()
 		wordCountMap[word] += 1
+
+		maxWordLength = updatedMaxWordLength(maxWordLength, word)
 	}
 
-	printMap(wordCountMap)
+	printMap(wordCountMap, maxWordLength)
 }
 
 func check(e error) {
@@ -31,8 +34,18 @@ func check(e error) {
 	}
 }
 
-func printMap(wordCountMap map[string]int){
+func updatedMaxWordLength(currentMaxWordLength int, word string) int{
+	wordLength := len(word)
+
+	if wordLength > currentMaxWordLength {
+		return wordLength
+	}
+
+	return currentMaxWordLength
+}
+
+func printMap(wordCountMap map[string]int, maxWordLength int){
 	for key, value := range wordCountMap {
-		fmt.Println(key, ": ", value)
+		fmt.Printf("%*v : %v\n", -maxWordLength, key, value)
 	}
 }
