@@ -17,7 +17,7 @@ func main() {
 	defer printTimeTaken(now)
 
 	scanner := bufio.NewScanner(file)
-	scanner.Split(bufio.ScanWords)
+	scanner.Split(splitWords)
 
 	maxWordLength := 0
 	wordCountMap := make(map[string]int)
@@ -41,6 +41,12 @@ func check(e error) {
 func printTimeTaken(now time.Time) {
 	fmt.Println()
 	fmt.Printf("Time taken: %v\n", time.Since(now))
+}
+
+func splitWords(data []byte, atEOF bool) (advance int, token []byte, err error){
+	for i:=0; i < len(token); i++  {
+		
+	}
 }
 
 func updatedMaxWordLength(currentMaxWordLength int, word string) int{
