@@ -20,9 +20,9 @@ Personal objectives:
 
 --------
 
-##Approaches
+## Approaches
 
-###1. Bufio.Scanner with bufio.ScanWords
+### 1. Bufio.Scanner with bufio.ScanWords
 
  - In-built package from golang and easy to use.
  - Splits words by splitting text on empty space delimiter.
@@ -36,8 +36,8 @@ Personal objectives:
  - Documentation on standard lib is decent.
  - Defer adds functions to execute into a stack, and hence they are run LIFO once current function has finished executing.
  
-###2. Bufio.Scanner with custom split function 
+### 2. Bufio.Scanner with custom split function 
 
-###3. Bufio.Scanner with custom split function + Max heap
+### 3. Bufio.Scanner with custom split function + Max heap
 
-###4. Bufio.Scanner with custom split function + Max heap + Channels
+### 4. Bufio.Scanner with custom split function + Max heap + Channels
