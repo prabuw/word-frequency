@@ -9,9 +9,9 @@ Phase 1: Get words and counts (case sensitive + case insensitive)
 
 - ~~Basic implementation~~
 - ~~Add basic diagnostics to capture execution time~~
-- More fine grain control on splitting words
-    - Remove punctuation
-- Split implementations into multiple files
+- ~~More fine grain control on splitting words~~
+    - ~~Remove punctuation~~
+- ~~Split implementations into multiple files~~
 - Run all implementations via harness that also does multiple iterations to average out timings
 - Implement case insensitive version
     
