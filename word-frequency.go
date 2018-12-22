@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("big.txt")
+	file, err := os.Open("./test-data/big.txt")
 	check(err)
 
 	defer file.Close()
